@@ -1,0 +1,307 @@
+<html>
+
+<head>
+  <title>Recipe Book</title>
+  {% extends "main/header.html" %}
+</head>
+
+{% block content %}
+{% load static %}
+<!--<img src="{% static 'path/to/image.ext' %}"/>-->
+
+<!--<style>-->
+<!--.landing {-->
+<!--    display: flex;-->
+<!--    justify-content: center;-->
+<!--    align-items: center;-->
+<!--}-->
+<!--.home-search {-->
+<!--      font-weight: bold;-->
+<!--      border: 0px solid;-->
+<!--      border-radius: 10px;-->
+<!--      position: absolute;-->
+<!--      top: 50%;-->
+<!--      left: 50%;-->
+<!--      transform: translate(-50%, -50%);-->
+<!--      z-index: 2;-->
+<!--      width: 90%;-->
+<!--      padding: 20px;-->
+<!--      text-align: center;-->
+<!--}-->
+<!--.home-search h1 {-->
+<!--    font-size: 1.5rem;-->
+<!--}-->
+<!--.home-search input {-->
+<!--    padding 0 10px;-->
+<!--    width: 100vh;-->
+<!--    height: 7vh;-->
+<!--    border-radius: 2px;-->
+<!--    border: 1px solid;-->
+<!--    text-align: left;-->
+<!--}-->
+<!--@media screen and (min-width: 800px) {-->
+
+<!--    .landing {-->
+<!--        display: flex;-->
+<!--        justify-content: center;-->
+<!--        align-items: center;-->
+<!--    }-->
+<!--    .home-search {-->
+<!--    &lt;!&ndash;  background-color: rgb(0,0,0);&ndash;&gt;-->
+<!--    &lt;!&ndash;  background-color: rgba(0,0,0, 0.4);&ndash;&gt;-->
+<!--      color: white;-->
+<!--      font-weight: bold;-->
+<!--      border: 0px solid;-->
+<!--      border-radius: 10px;-->
+<!--&lt;!&ndash;      position: absolute;&ndash;&gt;-->
+<!--&lt;!&ndash;      top: 50%;&ndash;&gt;-->
+<!--&lt;!&ndash;      left: 50%;&ndash;&gt;-->
+<!--&lt;!&ndash;      transform: translate(-50%, -50%);&ndash;&gt;-->
+<!--&lt;!&ndash;      z-index: 2;&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 40%;&ndash;&gt;-->
+<!--      padding: 20px;-->
+<!--      text-align: center;-->
+<!--    }-->
+<!--    .home-search h1 {-->
+<!--        font-size: 3.5rem;-->
+<!--    }-->
+<!--    .home-search input {-->
+<!--        padding 0 10px;-->
+<!--        width: 300px;-->
+<!--        height: 7vh;-->
+<!--        border-radius: 2px;-->
+<!--        border: 1px solid;-->
+<!--        text-align: left;-->
+<!--    }-->
+<!--}-->
+<!--</style>-->
+<style>
+    .landing{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 80vh;
+        margin: 0 20vh;
+    }
+    #search-submit{
+        border: 0px;
+        background: black;
+        border-radius: 0 10px 10px 0;
+        color:white;
+        padding: 15px;
+
+    }
+    #search-submit:hover{
+        color:var(--main-theme);
+
+    }
+    #search-box {
+        padding: 10px 20px;
+        width: 100%;
+        border: 0px;
+        border-radius: 10px 0 0 10px;
+        font-size: 22px;
+    }
+
+    .search-items {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .home-search {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 30vh;
+
+    }
+    .home-search h1{
+        color: grey;
+        font-style: italic;
+    }
+    .home-image {
+        height: 50vh;
+        width: 60vh;
+    }
+    .home-image img {
+        height: 100%;
+    }
+
+
+
+
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1s;
+  animation-name: fade;
+  animation-duration: 6s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media screen and (max-width: 900px) {
+  .text {font-size: 11px}
+
+  .landing {
+    flex-direction: column;
+  }
+  .home-image {
+        height: 40vh;
+        width: 40vh;
+        margin: 20%;
+   }
+   .home-search {
+        width: 40vh;
+        justify-content: space-evenly;
+   }
+   .home-search h1 {
+        font-size: 20px;
+        text-align: center;
+   }
+
+}
+
+</style>
+
+<body>
+    <div class="landing">
+
+<!--        <div class="home-image">-->
+<!--            <img src="{% static 'main/images/realfood.png' %}" alt="">-->
+<!--        </div>-->
+
+<div class="home-image">
+    <div class="slideshow-container">
+
+    <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="{% static 'main/images/food1.png' %}" style="width:100%">
+<!--    <div class="text">Caption Text</div>-->
+    </div>
+
+    <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="{% static 'main/images/food2.png' %}" style="width:100%">
+<!--    <div class="text">Caption Two</div>-->
+    </div>
+
+    <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="{% static 'main/images/food3.png' %}" style="width:100%">
+<!--    <div class="text">Caption Three</div>-->
+    </div>
+
+    </div>
+
+    <br>
+    <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    </div>
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+var i;
+var slides = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("dot");
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
+}
+slideIndex++;
+if (slideIndex > slides.length) {slideIndex = 1}
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+setTimeout(showSlides, 6000); // Change image every 2 seconds
+}
+</script>
+
+        <div class="home-search">
+            <h1>Looking for a Recipe?</h1>
+            <form action="/recipes?" method="get">
+                <div class="search-items">
+                    <input id="search-box" type="text" name="name__icontains" placeholder="Search Here... " required >
+                    <button id="search-submit" type="submit"><i class="material-icons">search</i></button>
+                </div>
+            </form>
+        </div>
+
+<!--        <div class="home-search">-->
+<!--            <h1>Welcome to Recipe Book</h1>-->
+<!--            <form action="/recipes?" method="get">-->
+<!--                <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">-->
+<!--                    <input style="padding: 10px 5px; width: 25vh; height: 5vh; border-radius: 10px; border: 1px solid; text-align: center;" type="text" name="name__icontains" placeholder="Search Recipe.." required >-->
+<!--                    <button style="border: 0px; background: none; color:black;" type="submit"><i class="material-icons">search</i></button>-->
+<!--                </div>-->
+
+<!--            </form>-->
+
+<!--        </div>-->
+
+
+    </div>
+
+</body>
+{% endblock %}
+</html>

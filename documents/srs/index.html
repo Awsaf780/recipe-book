@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <title>SRS | Recipe Book</title>
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stroke.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shCore.css" media="all">
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shThemeRDark.css" media="all">
+
+    <!-- CUSTOM -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+    <style>
+        td, th{
+            padding: 10px 30px;
+            border:  1px solid grey;
+        }
+        .section-sub table{
+            border: 1px solid grey;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div class="container">
+
+            <section id="top" class="section docs-heading">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="big-title text-center">
+                            <h1>Recipe Book</h1>
+                            <p class="lead">Software Requirements Specification</p>
+                            
+                        </div>
+                        <!-- end title -->
+                    </div>
+                    <!-- end 12 -->
+                </div>
+                <!-- end row -->
+
+                <hr>
+
+            </section>
+            <!-- end section -->
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
+                        <ul class="nav">
+                            <li><a href="#member">Members</a></li>
+                            <li><a href="#title-1">Introduction</a>
+                                <ul class="nav">
+                                    <li><a href="#title-1-1">Purpose</a></li>
+                                    <li><a href="#title-1-2">Intended Audience and Reading Suggestions</a></li>
+                                    <li><a href="#title-1-3">Product Scope</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#title-2">Overall Description</a>
+                                <ul class="nav">
+                                    <li><a href="#title-2-1">Product Perspective</a></li>
+                                    <li><a href="#title-2-2">Product Functions</a></li>
+                                    <li><a href="#title-2-3">User Classes and Characteristics</a></li>
+                                    <li><a href="#title-2-4">Operating Environment</a></li>
+                                    <li><a href="#title-2-5">Design and Implementation Constraints</a></li>
+                                    <li><a href="#title-2-6">Assumptions and Dependencies</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#title-3">External Interface Requirements</a>
+                                <ul class="nav">
+                                        <li><a href="#title-3-1">User Interfaces</a></li>
+                                        <li><a href="#title-3-2">Hardware Interfaces</a></li>
+                                        <li><a href="#title-3-3">Software Interfaces</a></li>
+                                        <li><a href="#title-3-4">Communication Interfaces</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li><a href="#title-4">System Features</a></li>
+                            <li><a href="#title-5">Use Case Diagram</a></li>
+                            <li><a href="#title-6">Extended Use Case</a></li>
+                            <li><a href="#title-7">Other Nonfunctional Requirements</a>
+                                <ul class="nav">
+                                            <li><a href="#title-7-1">Performance Requirements</a></li>
+                                            <li><a href="#title-7-2">Safety Requirements</a></li>
+                                            <li><a href="#title-7-3">Security Requirements</a></li>
+                                            <li><a href="#title-7-4">Software Quality Attributes</a></li>
+                                            <li><a href="#title-7-5">Business Rules</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#title-8">Other Requirements</a>
+                                <ul class="nav">
+                                    <li><a href="#title-8-1">Appendix A: Glossary</a></li>
+                                    <li><a href="#title-8-2">Appendix B: Analysis Models</a></li>
+                                    <li><a href="#title-8-3">Appendix C: To Be Determined List</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav >
+                </div>
+                <div class="col-md-9">
+                    
+                    <div class="main-doc">
+
+                        <div class="section" id="member">
+                            <h2>Team Members</h2>
+                            <table>
+                                <tr style="width: 100%;">
+                                    <th>Name</th>
+                                    <th>ID</th>
+                                </tr>
+                                <tr>
+                                    <td>Awsaf Mahmood Lisan</td>
+                                    <td>1813117042</td>
+                                </tr>
+                                <tr>
+                                    <td>Jannatul Ferdous Oyeshe </td>
+                                    <td>171149642</td>
+                                </tr>
+                                <tr>
+                                    <td>Sanjida Amir</td>
+                                    <td>1711433042</td>
+                                </tr>
+                                <tr>
+                                    <td>Nishat Sharmila </td>
+                                    <td>1811453042</td>
+                                </tr>
+                                <tr>
+                                    <td>Tawfique Elahi </td>
+                                    <td>1721421642</td>
+                                </tr>
+                                
+                                
+                            </table>
+                            <h2>Group Amigos</h2>
+                        </div>
+
+                        <div class="section" id="title-1">
+                            <h2>Introduction</h2>
+                            <div class="section-sub" id="title-1-1">
+                                <h2>Purpose</h2>
+                                <p>The purpose of this document is to present a detailed description of the Online Recipe Book System. It will explain the purpose and features of the system, the interfaces of the system, what the system will do, the constraints under which it must operate and how the system will react to external stimuli. This document is intended for both the stakeholders and the developers of the system and will be proposed to the respective Faculty for its approval</p>
+                            </div>
+                            <div class="section-sub" id="title-1-2">
+                                <h2>Intended Audience and Reading Suggestions</h2>
+                                <p>This document is intended for both the stakeholders and the developers of the system and will be proposed to the respective Faculty for its approval.</p>
+                            </div>
+                            <div class="section-sub" id="title-1-3">
+                                <h2>Product Scope</h2>
+                                <p>This software will be an Online Recipe Book System for home cooks. This system will be designed to maximize the user’s interest by providing a huge number of recipes to choose from. It will offer easy and simple Instructions, along with specific ingredients for every recipe. 
+                                    Additionally, the Online Recipe Book will allow the user to easily generate a list of available ingredients from popular e-stores with lowest prices. They can then use this list to purchase from those specific stores manually. 
+                                    Moreover, the user will find suggestions of recipes based on popular ratings and nutrition value. 
+                                    The system also contains a relational database containing a list of Recipes, Ingredients, Instructions, Nutrition and Ratings.
+                                    </p>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="section" id="title-2">
+                            <h2>Overall Description</h2>
+                            <div class="section-sub" id="title-2-1">
+                                <h2>Product Perspective</h2>
+                                <p>This System is a new, self-contained product. It consists of a website to view all viewable recipes. All recipes have relevant information about them and a functionality to generate a list depending on availability.</p>
+                            </div>
+                            <div class="section-sub" id="title-2-2">
+                                <h2>Product Functions</h2>
+                                <p>The Online Recipe Book has the following functionalities: <br>
+                                    <ul>
+                                        <li>Browse Recipe</li>
+                                        <li>Search Recipe</li>
+                                        <li>Read Recipe Content</li>
+                                        <li>Generate Ingredients Price List</li>
+                                        <li>Recommend Recipe</li>
+                                        
+                                    </ul>
+                                </p>
+                            </div>
+                            <div class="section-sub" id="title-2-3">
+                                <h2>User Classes and Characteristics</h2>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 20%;">Admin </td>
+                                        <td>Can Add, Edit and Delete Recipe entries</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reader </td>
+                                        <td>Can read tutorials, read generated ingredient-list, view suggestions</td>
+                                    </tr>
+                                    <tr>
+                                        <td>System </td>
+                                        <td>Can generate ingredient-list, generate tutorial suggestions</td>
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+                            <div class="section-sub" id="title-2-4">
+                                <h2>Operating Environment</h2>
+                                <p>
+                                    <ul>
+                                        <li>Relational Database</li>
+                                        <li>Client/Server System</li>
+                                        <li>Operating System: Windows/Android</li>
+                                        <li>Database: SQLite and Firebase</li>
+                                        <li>Platform: Web and Android</li>
+                                        
+                                    </ul>
+                                </p>
+                            </div>
+                            <div class="section-sub" id="title-2-5">
+                                <h2>Design and Implementation Constraints</h2>
+                                <p>
+                                    SQL commands for queries/applications <br>
+                                    Implement the database at least using a relational database management system
+
+                                </p>
+                            </div>
+                            <div class="section-sub" id="title-2-6">
+                                <h2>Assumptions and Dependencies</h2>
+                                <p>
+                                    The factors being assumed that could affect the requirements are:
+                                    <ul>
+                                        <li>Availability of all possible ingredients in desired e-Stores.</li>
+                                        <li>Uptime of desired e-Stores</li>
+                                        <li>Availability of sufficient ratings for recommending recipes.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="section" id="title-3">
+                            <h2>External Interface Requirements</h2>
+                            <div class="section-sub" id="title-3-1">
+                                <h2>User Interfaces</h2>
+                                <p>
+                                    Front-End: JavaScript <br>
+                                    Back-End: Django, SQLite, Java
+
+                                </p>
+                            </div>
+                            <div class="section-sub" id="title-3-2">
+                                <h2>Hardware Interfaces</h2>
+                                <p>Neither the mobile application nor the web version has any special hardware requirements. So, the system will not have any hardware interface.</p>
+                            </div>
+                            <div class="section-sub" id="title-3-3">
+                                <h2>Software Interfaces</h2>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 30%;">Operating System </td>
+                                        <td>We chose the Android operating system for its best support and user-friendliness.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Database </td>
+                                        <td>To save recipe records, ingredients and instructions, we chose SQLite database</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Framework </td>
+                                        <td>To implement the project, we chose Django for its interactive support.</td>
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+                            <div class="section-sub" id="title-3-4">
+                                <h2>Communication Interfaces</h2>
+                                <p>This project supports all types of web browsers.</p>
+                            </div>
+                            
+
+                        </div>
+                        
+                        <div class="section" id="title-4">
+                            <h2>System Features</h2>
+                            <div class="section-sub">
+                                <h2>Browse Recipes</h2>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 20%;">Description</td>
+                                        <td>Given that a user visits the website, he or she can browse a list of recipes.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Priority</td>
+                                        <td>High</td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    Response Sequence
+                                    <ul>
+                                        <li>●	Enter URL of Website</li>
+                                        <li>●	Click on Browse Recipe button</li>
+                                    </ul>
+                                </p>
+                            </div>
+
+                            <div class="section-sub">
+                                <h2>Search Recipe</h2>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 20%;">Description</td>
+                                        <td>User can Search for recipes of his own choice.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Priority</td>
+                                        <td>Medium</td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    Response Sequence
+                                    <ul>
+                                        <li>●	Click Search Box on all recipes page</li>
+                                        <li>●	Enter text in search box</li>
+                                        <li>●	Initiate Search</li>
+                                    </ul>
+                                </p>
+                            </div>
+
+                            <div class="section-sub">
+                                <h2>Read Recipe Content</h2>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 20%;">Description</td>
+                                        <td>User can select a recipe from browsable list or from search result to view recipe content.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Priority</td>
+                                        <td>High</td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    Response Sequence
+                                    <ul>
+                                        <li>●	Find desired recipe</li>
+                                        <li>●	Click on title/image of recipe</li>
+                                    </ul>
+                                </p>
+                            </div>
+
+                            <div class="section-sub">
+                                <h2>Generate Ingredient List</h2>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 20%;">Description</td>
+                                        <td>Users get a custom list of ingredients per recipe with lowest prices from several e-stores.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Priority</td>
+                                        <td>Medium</td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    Response Sequence
+                                    <ul>
+                                        <li>●	Select a recipe</li>
+                                        <li>●	Click on Generate Lowest Price List</li>
+                                        <li>●	Download csv</li>
+                                    </ul>
+                                </p>
+                            </div>
+
+                            <div class="section-sub">
+                                <h2>Recommend Recipe</h2>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 20%;">Description</td>
+                                        <td>User is provided with a list of suggested recipes based on food nutrition</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Priority</td>
+                                        <td>Medium</td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    Response Sequence
+                                    <ul>
+                                        <li>●	Select a recipe</li>
+                                    </ul>
+                                </p>
+                            </div>
+
+                            
+
+                        </div>
+                        
+                        <div class="section" id="title-5">
+                            <h2>Use Case Diagram</h2>
+                            <div class="section-sub">
+                                <img src="images/usecase.png" alt="Use Case Diagram" style="width: 100%;">
+                            </div>
+                        </div>
+                        
+                        <div class="section" id="title-6">
+                            <h2>Extended Use Case</h2>
+                            
+                            <div class="section-sub">
+                                <p><b>Read Tutorial</b></p>
+                                <table style="border: 1px solid black;">
+                                    <tr style="width: 100%;">
+                                        <td style="width: 50%;">Name</td>
+                                        <td>    Read Tutorial</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Actor</td>
+                                        <td>    Reader, Admin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type</td>
+                                        <td>    Primary</td>
+                                    </tr>
+                                    
+                                </table>
+
+                                <p><b>Typical Course of Events</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <th style="width: 50%;">Actor Action</th>
+                                        <th>System Response</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1)      User selects recipe</td>
+                                        <td>2)      System renders selected recipe tutorial page</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="section-sub">
+                                <p><b>View Suggestion</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 50%;">Name</td>
+                                        <td>    View Suggestion</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Actor</td>
+                                        <td>    Reader, Admin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type</td>
+                                        <td>    Primary</td>
+                                    </tr>
+                                    
+                                </table>
+
+                                <p><b>Typical Course of Events</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <th style="width: 50%;">Actor Action</th>
+                                        <th>System Response</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1)      User selects recipe</td>
+                                        <td>2)      System renders selected recipe tutorial page</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>3)      System renders section of recipe suggestions</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="section-sub">
+                                <p><b>View Generated List</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 50%;">Name</td>
+                                        <td>    View Generated List</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Actor</td>
+                                        <td>    Reader, Admin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type</td>
+                                        <td>    Primary</td>
+                                    </tr>
+                                    
+                                </table>
+
+                                <p><b>Typical Course of Events</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <th style="width: 50%;">Actor Action</th>
+                                        <th>System Response</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1)      User selects recipe</td>
+                                        <td>2)      System renders selected recipe tutorial page</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3)      User clicks generate button</td>
+                                        <td>4)      System renders page with generated list</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="section-sub">
+                                <p><b>Add Recipe</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 50%;">Name</td>
+                                        <td>    Add Recipe</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Actor</td>
+                                        <td>    Admin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type</td>
+                                        <td>    Primary</td>
+                                    </tr>
+                                    
+                                </table>
+
+                                <p><b>Typical Course of Events</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <th style="width: 50%;">Actor Action</th>
+                                        <th>System Response</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1)      Admin logs in admin panel</td>
+                                        <td>2)      System provides add feature</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3)      Admin adds recipe</td>
+                                        <td>4)      System saves recipe in database</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="section-sub">
+                                <p><b>Edit Recipe</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 50%;">Name</td>
+                                        <td>    Edit Recipe</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Actor</td>
+                                        <td>    Admin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type</td>
+                                        <td>    Primary</td>
+                                    </tr>
+                                    
+                                </table>
+
+                                <p><b>Typical Course of Events</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <th style="width: 50%;">Actor Action</th>
+                                        <th>System Response</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1)      Admin logs in admin panel</td>
+                                        <td>2)      System provides edit feature</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3)      Admin edits recipe</td>
+                                        <td>4)      System saves recipe in database</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="section-sub">
+                                <p><b>Delete Recipe</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 50%;">Name</td>
+                                        <td>    Delete Recipe</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Actor</td>
+                                        <td>    Admin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type</td>
+                                        <td>    Primary</td>
+                                    </tr>
+                                    
+                                </table>
+
+                                <p><b>Typical Course of Events</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <th style="width: 50%;">Actor Action</th>
+                                        <th>System Response</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1)      Admin logs in admin panel</td>
+                                        <td>2)      System provides delete feature</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3)      Admin deletes recipe</td>
+                                        <td>4)      System saves changes in database</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="section-sub">
+                                <p><b>Generate Ingredient-List</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 50%;">Name</td>
+                                        <td>    Generate Ingredient-List</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Actor</td>
+                                        <td>    System</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type</td>
+                                        <td>    Primary</td>
+                                    </tr>
+                                    
+                                </table>
+
+                                <p><b>Typical Course of Events</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <th style="width: 50%;">Actor Action</th>
+                                        <th>System Response</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1)      User selects Generate List Button</td>
+                                        <td>2)      Server generates List</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>3)      System renders List on website</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="section-sub">
+                                <p><b>Generate Suggestion</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 50%;">Name</td>
+                                        <td>    Generate Suggestion</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Actor</td>
+                                        <td>    System</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type</td>
+                                        <td>    Primary</td>
+                                    </tr>
+                                    
+                                </table>
+
+                                <p><b>Typical Course of Events</b></p>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <th style="width: 50%;">Actor Action</th>
+                                        <th>System Response</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1)      User selects Recipe</td>
+                                        <td>2)      Server generates suggestion</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>3)      System renders suggestion on website</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            
+
+                            
+
+                        </div>
+                        
+                        <div class="section" id="title-7">
+                            <h2>Other Nonfunctional Requirements</h2>
+                            <div class="section-sub" id="title-7-1">
+                                <h2>Performance Requirements</h2>
+                                <p>
+                                    This section's requirements provide a detailed specification of the user interaction with the software and measurements placed on the system performance. 
+                                    <br> The performance requirements are:
+                                    <br> ●	Ambiguous: The application will load within an adequate time frame.
+                                    <br> ●	Unrealistic: The application will load in less than 0.01 seconds at all times.
+                                    <br> ●	Unverifiable: Flexible, secure, sufficient, safe, ad hoc, adequate, user-friendly, usable, when required, if required, appropriate, fast, portable, lightweight, small, large, maximize, minimize, robust, quickly, easily
+
+                                </p>
+                            </div>
+                            <div class="section-sub" id="title-7-2">
+                                <h2>Safety Requirements</h2>
+                                <p>The requirements in this section provide a detailed specification of the user interaction with the software and measurements placed on the system performance.
+                                    To ensure no data is lost in case the user decides to change devices or if the user's device is extensively damaged all data will be stored in cloud storages. This will allow safe storage and easy accessibility from anywhere.
+                                    </p>
+                            </div>
+                            <div class="section-sub" id="title-7-3">
+                                <h2>Security Requirements</h2>
+                                <p>The System shall not disclose any personal information about the users. The Application shall not grant access to an unauthorized user and the Application shall not communicate with any other devices or servers while in use by the user.
+                                    In addition to that users must refrain from uploading any sensitive information such as credit card info, id or any personal information that is not required.
+                                    </p>
+                            </div>
+                            <div class="section-sub" id="title-7-4">
+                                <h2>Software Quality Attributes</h2>
+                                <p>
+                                    ●	AVAILABILITY: The recipes will always be available on demand for users. <br>
+                                    ●	CORRECTNESS: The recipes will be in correct form for respective food items. <br>
+                                    ●	MAINTAINABILITY: The price of ingredients will be scraped periodically. <br>
+                                    ●	USABILITY: The ease of our application should satisfy a maximum number of customers. <br>
+
+                                </p>
+                            </div>
+                            <div class="section-sub" id="title-7-5">
+                                <h2>Business Rules</h2>
+                                <p>This application is free and we will not incorporate ads here.</p>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="section" id="title-8">
+                            <h2>Other Requirements</h2>
+                            <div class="section-sub" id="title-8-1">
+                                <h2>Appendix A: Glossary</h2>
+                                <table>
+                                    <tr style="width: 100%;">
+                                        <td style="width: 20%;">Framework</td>
+                                        <td>It is like the base of a program that provides generic functionality but can be custom built for specific purposes.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Backend</td>
+                                        <td>The part of an app service that works behind the scenes away from the user’s device, usually in the cloud (server computer owned by the company).</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="section-sub" id="title-8-2">
+                                <h2>Appendix B: Analysis Models</h2>
+                                <p>Not Applicable</p>
+                            </div>
+                            <div class="section-sub" id="title-8-3">
+                                <h2>Appendix C: To Be Determined List</h2>
+                                <p>Not Applicable</p>
+                            </div>
+                            
+                        </div>
+                        
+                        
+
+                    </div>
+                    <!-- end .main-doc -->
+<!-- paste srs body upto here -->
+                </div>
+                <!-- // end .col -->
+            </div>
+            <!-- // end .row -->
+        </div>
+        <!-- // end container -->
+    </div>
+    <!-- end wrapper -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/retina.js"></script>
+    <script src="js/jquery.fitvids.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+
+    <!-- CUSTOM PLUGINS -->
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/syntax-highlighter/scripts/shCore.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushXml.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushCss.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushJScript.js"></script>
+
+</body>
+
+</html>

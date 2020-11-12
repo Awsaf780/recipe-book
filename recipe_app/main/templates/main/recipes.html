@@ -1,0 +1,230 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+
+<title>Recipes</title>
+<style type="text/css">
+
+
+
+.recipe-flex {
+     margin: 0 auto 5vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+
+
+.pagination {
+    margin-top: 5vh;
+}
+.filter-form {
+    margin-bottom: 3vh;
+    width: 100%;
+    padding: 0 10%;
+}
+
+.filter-form form label {
+    display: none;
+}
+.filter-form form input {
+    padding 0 10px;
+    width: 100%;
+    height: 5vh;
+    border-radius: 2px;
+    border: 1px solid;
+}
+.filter-form form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+.card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+}
+.card .card_image img {
+  width: 100%;
+  height: inherit;
+  border-radius: 0px;
+  object-fit: cover;
+}
+
+
+}
+
+@media screen and (min-width: 800px) {
+.recipe-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 100px 50px;
+}
+.filter-form form input {
+    width: 30%;
+    padding: 0 5vh;
+}
+
+.pagination {
+    margin-top: 0vh;
+}
+.filter-form {
+    margin-bottom: 0vh;
+}
+
+
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.card {
+  margin: 30px auto;
+  width: 350px;
+  height: 300px;
+  border-radius: 30px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 30px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.card .card_image img:hover {
+    filter: saturate(120%);
+}
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: -60px;
+  height: 40px;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+}
+
+</style>
+
+{% load main_extras %}
+<div class="recipe-flex">
+
+
+    <div class="filter-form">
+        <form method="GET">
+            {{ recipe_filter.form }}
+            <button style="border: 0px; background: none;" type="submit"><i class="material-icons">search</i></button>
+        </form>
+    </div>
+
+
+<!--    <div class="recipe">-->
+<!--        {% for recipe in recipes %}-->
+<!--          <div class="card">-->
+<!--            <img src="{{recipe.url}}" alt="{{recipe.name}}" style="width:100%; max-height: 250px;">-->
+<!--            <div class="recipe-details">-->
+<!--              <h5><a href="recipes/{{recipe.id}}">{{recipe.name}} {{recipe.reviews}}</a></h5>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+    <div class="cards-list">
+        {% for recipe in recipes %}
+            <a href="recipes/{{recipe.id}}">
+            <div class="card 1">
+                <div class="card_image">
+                    <img src="{{recipe.url}}" />
+                </div>
+                <div class="card_title title-white">
+                    <p>{{recipe.name}}</p>
+                </div>
+            </div>
+                </a>
+        {% endfor %}
+    </div>
+
+
+    <div class="pagination">
+        {% if recipes.has_previous %}
+            <a class="btn btn-outline-info mb-4" href="/recipes{% my_url 1 'page' request.GET.urlencode %}">First</a>
+            <a class="btn btn-outline-info mb-4" href="/recipes{% my_url recipes.previous_page_number 'page' request.GET.urlencode %}"><i class="material-icons">navigate_before</i></a>
+          {% endif %}
+
+          {% for num in recipes.paginator.page_range %}
+            {% if recipes.number == num %}
+              <a class="btn btn-primary mb-4" href="/recipes{% my_url num 'page' request.GET.urlencode %}">{{ num }}</a>
+            {% elif num > recipes.number|add:'-3' and num < recipes.number|add:'3' %}
+              <a class="btn btn-outline-info mb-4" href="/recipes{% my_url num 'page' request.GET.urlencode %}">{{ num }}</a>
+            {% endif %}
+          {% endfor %}
+
+          {% if recipes.has_next %}
+            <a class="btn btn-outline-info mb-4" href="/recipes{% my_url recipes.next_page_number 'page' request.GET.urlencode %}"><i class="material-icons">navigate_next</i></a>
+            <a class="btn btn-outline-info mb-4" href="{% my_url recipes.paginator.num_pages 'page' request.GET.urlencode %}">Last</a>
+          {% endif %}
+    </div>
+
+
+</div>
+<!--<div class="pagination">-->
+<!--    {% if recipes.has_previous %}-->
+<!--        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>-->
+<!--        <a class="btn btn-outline-info mb-4" href="?page={{ recipes.previous_page_number }}">Previous</a>-->
+<!--      {% endif %}-->
+
+<!--      {% for num in recipes.paginator.page_range %}-->
+<!--        {% if recipes.number == num %}-->
+<!--          <a class="btn btn-primary mb-4" href="?page={{ num }}">{{ num }}</a>-->
+<!--        {% elif num > recipes.number|add:'-7' and num < recipes.number|add:'7' %}-->
+<!--          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>-->
+<!--        {% endif %}-->
+<!--      {% endfor %}-->
+
+<!--      {% if recipes.has_next %}-->
+<!--        <a class="btn btn-outline-info mb-4" href="?page={{ recipes.next_page_number }}">Next</a>-->
+<!--        <a class="btn btn-outline-info mb-4" href="?page={{ recipes.paginator.num_pages }}">Last</a>-->
+<!--      {% endif %}-->
+<!--</div>-->
+
+{% endblock %}

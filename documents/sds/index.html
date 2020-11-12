@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <title>SDS | Recipe Book</title>
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stroke.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shCore.css" media="all">
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shThemeRDark.css" media="all">
+
+    <!-- CUSTOM -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div class="container">
+
+            <section id="top" class="section docs-heading">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="big-title text-center">
+                            <h1>Recipe Book</h1>
+                            <p class="lead">System Design Specification</p>
+                        </div>
+                        <!-- end title -->
+                    </div>
+                    <!-- end 12 -->
+                </div>
+                <!-- end row -->
+
+                <hr>
+
+            </section>
+            <!-- end section -->
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
+                        <ul class="nav">
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#conventions">Document Conventions</a></li>
+                            <li><a href="#component-desc">Description of Design Components</a>
+                                <ul class="nav">
+                                        <li><a href="#comp-1">Server Side</a></li>
+                                        <li><a href="#comp-2">Client Side</a></li>
+                                        <li><a href="#comp-3">Mobile</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#component-design">High-Level Component Design</a></li>
+                            <li><a href="#class-diagram">Class Diagrams</a>
+                                <ul class="nav">
+                                        <li><a href="#class-1">Detailed Class Diagram</a></li>
+                                        <li><a href="#class-2">Detailed Class Description</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#database-design">Database Design</a>
+                                <ul class="nav">
+                                            <li><a href="#db-1">ER Diagram</a></li>
+                                            <li><a href="#db-2">ER Description</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#implementation">Implementation Plan</a></li>
+                        </ul>
+                    </nav >
+                </div>
+                <div class="col-md-9">
+                    
+                    <div class="main-doc">
+        
+                        <div class="section" id="introduction">
+                            <h2>1. Introduction</h2>
+
+                            <div class="section-sub">
+                                <h2>1.1 Purpose</h2>
+                                <p>This module will describe how the software will be designed providing the specific information about the expected classes and functionality. 
+                                <br>  This software will be an Online Recipe Book System for home cooks. This system will be designed to maximize the user’s interest by providing a huge number of recipes to choose from. It will offer easy and simple Instructions, along with specific ingredients for every recipe. 
+                                <br> Additionally, the Online Recipe Book will allow the user to easily generate a list of available ingredients from popular e-stores with lowest prices. They can then use this list to purchase from those specific stores manually. 
+                                <br> Moreover, the user will find suggestions of recipes based on popular ratings and nutrition value. The system also contains a relational database containing a list of Ingredient price and all recipes.</p>
+                            </div>
+                        </div>
+
+                        <div class="section" id="conventions">
+                            <h2>2. Document Conventions</h2>
+                            
+                            <div class="section-sub">
+                                <p>Not Applicable</p>
+                            </div>
+                            
+                        </div>
+
+                        <div class="section" id="component-desc">
+                            <h2>3. Description of Design Components</h2>
+                            
+                            <div class="section-sub" id="comp-1">
+                                <h2>3.1 Server Side</h2>
+                                <p>The backend coding will be done in Django Framework. The database of recipe and Ingredients price list will be stored using PostgreSQL</p>
+                            </div>
+
+                            <div class="section-sub" id="comp-2">
+                                <h2>3.2 Client Side</h2>
+                                <p>The frontend coding will be done with the help of HTML, Bootstrap and JavaScript to make the webpages responsive, simple and easy to use with friendly user interface.</p>
+                            </div>
+
+                            <div class="section-sub" id="comp-3">
+                                <h2>3.3 Mobile</h2>
+                                <p>The webapp will be mobile friendly. It will also be developed as an Android application using Java.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="section" id="component-design">
+                            <h2>4. High-Level Component Design</h2>
+                            <div class="section-sub">
+                                <img src="#" alt="Component Design">
+                            </div>
+                        </div>
+
+                        <div class="section" id="class-diagram">
+                            <h2>5. Class Diagrams</h2>
+                            
+                            <div class="section-sub" id="class-1">
+                                <h2>5.1 Class Diagram</h2>
+                                <img src="images/class.png" alt="Class Diagram" width="100%">
+                            </div>
+
+                            <div class="section-sub" id="class-2">
+                                <h2>5.2 Class Description</h2>
+                                
+                                <div class="section-tab">
+                                    <h4>5.2.1 Name: Recipe</h4>
+                                    <p>Purpose: To store all information related to Recipe Book</p>
+                                    
+                                    <p>Attribute 1 <br>
+                                        Name: Title <br>
+                                        Type: String <br>
+                                        Purpose: To Identify Recipe by name/title <br>
+                                    </p>
+                                    <p>Attribute 2 <br>
+                                        Name: ID <br>
+                                        Type: Int <br>
+                                        Purpose: To identify and search recipe by id <br>
+                                        
+                                    </p>
+                                    <p>Attribute 3 <br>
+                                        Name: Directions <br>
+                                        Type: Dictionary <br>
+                                        Purpose: To store Instructions as values with each step as key. <br>
+                                        
+                                    </p>
+                                    <p>Attribute 4 <br>
+                                        Name: Nutrition<br>
+                                        Type: Dictionary <br>
+                                        Purpose: To store nutrition values of each recipe to be used as reference for machine learning model. <br>
+                                        
+                                    </p>
+                                    <p>Attribute 5<br>
+                                        Name: Ingredients<br>
+                                        Type: List<br>
+                                        Purpose: To store a list of Ingredients of recipe<br>
+                                        
+                                    </p>
+                                    <p>Attribute 6<br>
+                                        Name: Rating<br>
+                                        Type: Float<br>
+                                        Purpose: to store original ratings that was scraped<br>
+                                        
+                                    </p>
+                                    <p>Method 1<br>
+                                        Name: suggest_recipe<br>
+                                        Parameters: int ID<br>
+                                        Return Type: List<br>
+                                        Purpose: Method to invoke Recommendation System to return a number of suggestions<br>
+                                        
+                                    </p>
+                                </div>
+                                
+                                <div class="section-tab">
+                                    <h4>5.2.1 Name: Recommendation</h4>
+                                    <p>Purpose: </p>
+                                    <p>Attribute 1<br>
+                                        Name: Formula<br>
+                                        Type: String<br>
+                                        Purpose: To store name of Algorithm to be used, like Cosine, Euclidean<br>
+                                    </p>
+                                    <p>Attribute 2<br>
+                                        Name: count<br>
+                                        Type: Int<br>
+                                        Purpose: To store Number of recommendations to return<br>
+                                        
+                                    </p>
+                                    <p>Attribute 3<br>
+                                        Name: recipe_id<br>
+                                        Type: int<br>
+                                        Purpose: To store id of recipe to base on suggestion.<br>
+                                        
+                                    </p>
+                                    <p>Method 1<br>
+                                        Name: nutrition_recommender<br>
+                                        Parameter: int id, string formula, int count<br>
+                                        Return Type: List<br>
+                                        Purpose: method to calculate similarity and distance between items and return list of recipe id.<br>
+                                        
+                                    </p>
+                                </div>
+
+                                <div class="section-tab">
+                                    <h4>5.2.1 Name: IngredientPriceList</h4>
+                                    <p>Purpose: To store all price of ingredients scraped from various websites.</p>
+
+                                    <p>Attribute 1<br>
+                                        Name: name<br>
+                                        Type: String<br>
+                                        Purpose: To store name of ingredient.<br>        
+                                    </p>
+                                    <p>Attribute 2<br>
+                                        Name: price<br>
+                                        Type: float<br>
+                                        Purpose: To store price of ingredient<br>
+                                                    
+                                    </p>
+                                    <p>Attribute 3<br>
+                                        Name: type<br>
+                                        Type: string<br>
+                                        Purpose: To store type of Ingredient, like fish, meat, vegetables<br>
+                                                    
+                                    </p>
+                                    <p>Attribute 4<br>
+                                        Name: scraped_from<br>
+                                        Type: string<br>
+                                        Purpose: To stored website name data was scraped from.<br>
+                                                    
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="section" id="database-design">
+                            <h2>6. Database Design</h2>
+                            
+                            <div class="section-sub" id="db-1">
+                                <h2>6.1 ER Diagram</h2>
+                                <img src="images/db.png" alt="Entity Relation Diagram" width="100%">
+                            </div>
+
+                            <div class="section-sub" id="db-2">
+                                <h2>6.2 ER Description</h2>
+
+                                <div class="section-tab">
+                                    <h4>6.2.1 Table name: Recipe</h4>
+                                    <p>Purpose: To Store all information related to Recipe Book</p>
+
+                                    <p>Attribute 1 <br>
+                                        Name: Name<br>
+                                        Type: Varchar<br>
+                                        Purpose: To Identify Recipe by name/title<br>
+                                    </p>
+                                    <p>Attribute 2<br>
+                                        Name: ID<br>
+                                        Type: Int<br>
+                                        Purpose: To identify and search recipe by id<br>
+                                        
+                                    </p>
+                                    <p>Attribute 3<br>
+                                        Name: Directions<br>
+                                        Type: Varchar<br>
+                                        Purpose: To store Instructions as values with each step as key.<br>
+                                        
+                                    </p>
+                                    <p>Attribute 4<br>
+                                        Name: Nutrition<br>
+                                        Type: Varchar<br>
+                                        Purpose: To store nutrition values of each recipe to be used as reference for machine learning model.<br>
+                                        
+                                    </p>
+                                    <p>Attribute 5<br>
+                                        Name: Ingredients<br>
+                                        Type: Varchar<br>
+                                        Purpose: To show the ingredients list of each recipe to be used as reference for machine learning model.<br>
+                                        
+                                    </p>
+                                    <p>Attribute 6<br>
+                                        Name: Rating<br>
+                                        Type: Float<br>
+                                        Purpose: It can show a rating so that one can understand how Helpful the specific recipe is.<br>
+                                        
+                                    </p>
+                                    <p>Attribute 7:<br>
+                                        Name: Reviews<br>
+                                        Type: Varchar<br>
+                                        Purpose: write opinion about recipes. <br>
+                                        
+                                    </p>
+                                </div>
+
+                                <div class="section-tab">
+                                    <h4>6.2.2 Table name: Price List</h4>
+                                    <p>Purpose: Shows Prices of all ingredients.</p>
+
+                                    <p>Attribute 1<br>
+                                        Name: price type.<br>
+                                        Type: varchar<br>
+                                        Purpose: Show payment method.<br>
+                                    </p>
+                                    <p>Attribute 2<br>
+                                        Name: Ingredients.<br>
+                                        Type: Varchar.<br>
+                                        Purpose: Price List also shows all ingredients of a recipe. <br>                       
+                                    </p>
+                                    <p>Attribute 3<br>
+                                        Name: Website<br>
+                                        Type: Varchar<br>
+                                        Purpose: Websites are work for generating all ingredient prices. <br>                        
+                                    </p>
+                                </div>
+
+                                <div class="section-tab">
+                                    <h4>6.2.3 Table name: Nutrition Value</h4>
+                                    <p>Purpose: To store Nutrition values per recipe.</p>                    
+                                    <p>Attribute 1<br>
+                                        Name: Id <br>
+                                        Type: int<br>
+                                        Purpose: specify unique id of all recipe.<br>
+                                    </p>
+                                    <p>Attribute 2<br>
+                                        Name: calorie<br>
+                                        Type: int<br>
+                                        Purpose: shows the amount of calorie remains in a recipe.<br>                        
+                                    </p>
+                                    <p>Attribute 3<br>
+                                        Name: cholesterol<br>
+                                        Type: int<br>
+                                        Purpose: shows the amount of cholesterol remains in a recipe.<br>
+                                    </p>
+                                    <p>Attribute 4<br>
+                                        Name: protein<br>
+                                        Type: int<br>
+                                        Purpose: shows the amount of protein remains in a recipe.<br>                       
+                                    </p>
+                                    <p>Attribute 5<br>
+                                        Name: fat<br>
+                                        Type: int<br>
+                                        Purpose: shows the amount of fat remains in a recipe.<br>               
+                                    </p>
+                                    <p>Attribute 6<br>
+                                        Name: fiber<br>
+                                        Type: int<br>
+                                        Purpose: shows the amount of fiber remains in a recipe.<br>                   
+                                    </p>
+                                    <p>Attribute 7<br>
+                                        Name: sodium<br>
+                                        Type: int<br>
+                                        Purpose: shows the amount of sodium remains in a recipe.<br>                      
+                                    </p>
+                                    <p>Attribute 8<br>
+                                        Name: cholesterol<br>
+                                        Type: int<br>
+                                        Purpose: shows the amount of cholesterol remains in a recipe.<br>                        
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section" id="implementation">
+                            <h2>7. Implementation Plan</h2>
+
+                            <div class="section-sub">
+                                <p>First, we will set up our Django framework and all the backend coding, connecting to the database and outputting required management system. 
+                                    <br> Then we will build the recommendation model.
+                                    <br> Finally, we will complete our frontend coding and user testing. 
+                                </p>
+                            </div>
+                        </div>
+
+        
+                    </div>
+                    <!-- end .main-doc -->
+
+                </div>
+                <!-- // end .col -->
+
+            </div>
+            <!-- // end .row -->
+
+        </div>
+        <!-- // end container -->
+
+    </div>
+    <!-- end wrapper -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/retina.js"></script>
+    <script src="js/jquery.fitvids.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+
+    <!-- CUSTOM PLUGINS -->
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/syntax-highlighter/scripts/shCore.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushXml.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushCss.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushJScript.js"></script>
+
+</body>
+
+</html>

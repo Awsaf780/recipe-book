@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% extends "main/header.html" %}
+	<title>Recommendation</title>
+</head>
+
+{% block content %}
+<body>
+
+	<form action="suggest" method="post">
+		{% csrf_token %}
+		Input Text:
+		<input type="text" name="param" required><br><br>
+		{% for recipe in data %}
+			<a href="#">{{recipe}}</a><br>
+		{% endfor %}
+		<!-- {{data}}<br> -->
+		<input type="submit" value="Execute External Python Script">
+	</form>
+
+</body>
+{% endblock %}
+</html>
